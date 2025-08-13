@@ -37,17 +37,19 @@
     margin-top: 3.75rem;
     margin-bottom: 3.75rem;
     width: 100%;
+    
 }
 
 .testimonials-containers-container {
     box-sizing: border-box;
-    max-height: 18.87rem;
+    height: 18.87rem;
     max-width: 30.2919rem;
     border-radius: 24px;
     padding: 1.875rem;
     font-family: 'Montserrat', sans-serif;
-    ;
 }
+
+
 
 .testimonials-containers-container1 {
     background-color: var(--sage-green);
@@ -145,6 +147,6 @@
 
 @media (max-width: 385px) {
     .testimonials-containers-container{
-        max-height: 100%;
+        height: 100%;
     }
 }
