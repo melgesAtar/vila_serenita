@@ -21,6 +21,13 @@
     margin-bottom: 2.5rem;
 }
 
+@media (max-width: 1570px) {
+    .video {
+        padding: 3.75rem 4rem;
+
+    }
+}
+
 @media (max-width: 768px) {
     .video {
         padding: 4rem 3.75rem;

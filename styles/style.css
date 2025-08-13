@@ -1,19 +1,26 @@
 @import url(reset.css);
 @import url(hero.css);
 @import url(video.css);
+@import url(testimonials.css);
 
 html {
     scroll-behavior: smooth;
-    font-size: 100%; 
+    font-size: 100%;
 }
 
 /*Fonts-weight*/
 .light {
     font-weight: 300;
 }
+
 .medium {
     font-weight: 500;
 }
+
+.semi-bold {
+    font-weight: 600;
+}
+
 .bold {
     font-weight: 700;
 }
@@ -23,12 +30,15 @@ html {
     --white: #FFFFFF;
     --black: #000000;
     --greendlewald: #0D452E;
-    --forest-green:#436F5C;
+    --forest-green: #436F5C;
     --lagoon-shadow: #444741;
     --chrysler-arctic-white: #F6F7F4;
-    --deep-forest-green:#040F00;
-    --underworld:#1D221B;
-    --tea-green:#D4EBC0;
+    --deep-forest-green: #040F00;
+    --underworld: #1D221B;
+    --tea-green: #D4EBC0;
+    --light-olive: #DAE29B;
+    --sage-green: #87A4A3;
+    --dark-teal: #386665;
 }
 
 body {
@@ -38,73 +48,63 @@ body {
 }
 
 /* CTAS */
-.cta{
-    animation: pulse 2s infinite;
-}
-.cta1 {
+.cta {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: .625rem;
     font-weight: 700;
     font-size: 1.25rem;
+    animation: pulse 2s infinite;
     text-transform: uppercase;
+    padding: .9375rem 1.875rem;
+    border-radius: 99px;
+    text-decoration: none;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.cta1 {
     color: var(--greendlewald);
     background-color: var(--tea-green);
-    padding: .9375rem 1.875rem;
-    border-radius: 0.625rem;
-    text-decoration: none;
-    border-radius: 99px;
-    transition: background-color 1s ease-in-out, color 1s ease-in-out; /* Adiciona a transição ao botão inteiro */
 }
 
 .cta1:hover {
     background-color: var(--greendlewald);
-    color: var(--chrysler-arctic-white); 
+    color: var(--chrysler-arctic-white);
 }
 
 .cta1:hover svg {
-    fill: var(--chrysler-arctic-white); /* Muda a cor do SVG quando o hover é ativado */
+    fill: var(--chrysler-arctic-white);
 }
 
 .cta1 svg {
-    transition: fill 1s ease-in-out; /* Adiciona uma transição suave para o fill do SVG */
+    transition: fill 0.5s ease-in-out;
 }
 
 .cta2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: .625rem;
-    font-weight: 700;
-    font-size: 1.25rem;
-    text-transform: uppercase;
     color: var(--greendlewald);
     background-color: var(--white);
-    padding: .9375rem 1.875rem;
-    border-radius: 0.625rem;
-    text-decoration: none;
-    border-radius: 99px;
-    transition: background-color 1s ease-in-out, color 1s ease-in-out; 
     justify-self: center;
 }
 
 .cta2:hover {
     background-color: var(--greendlewald);
-    color: var(--chrysler-arctic-white); 
+    color: var(--chrysler-arctic-white);
 }
 
 .cta2:hover svg {
-    fill: var(--chrysler-arctic-white); /* Muda a cor do SVG quando o hover é ativado */
+    fill: var(--chrysler-arctic-white);
 }
 
 .cta2-svg {
-    transition: fill 1s ease-in-out; /* Adiciona uma transição suave para o fill do SVG */
+    transition: fill 0.5s ease-in-out;
 }
 
 
 .title {
     font-family: 'Poppins', sans-serif;
+    color: var(--deep-forest-green);
+    line-height: 130%;
 
 }
 
@@ -114,19 +114,34 @@ body {
 
 @media (max-width: 1200px) {
     html {
-        font-size: 93.75%; 
+        font-size: 93.75%;
     }
 }
 
 @media (max-width: 992px) {
     html {
-        font-size: 87.5%; 
+        font-size: 87.5%;
     }
 }
 
 @media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .cta {
+        font-size: 1.25rem;
+        padding: 1rem 2rem;
+    }
+
     html {
-        font-size: 81.25%; 
+        font-size: 81.25%;
     }
 }
 
@@ -135,12 +150,19 @@ body {
         font-size: 2.3rem;
         line-height: 1.1;
     }
+
     .subtitle {
         font-size: 1.4rem;
         line-height: 1.2;
     }
+
+    .cta {
+        font-size: 1.125rem;
+        padding: .75rem 1.5rem;
+    }
+
     html {
-        font-size: 65%; 
+        font-size: 65%;
     }
 }
 
@@ -156,9 +178,11 @@ body {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.05);
     }
+
     100% {
         transform: scale(1);
     }
