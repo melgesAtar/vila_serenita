@@ -20,6 +20,8 @@
 }
 
 .about-content {
+    display: flex;
+    flex-direction: column;
     width: 66.0625rem;
     color: var(--dark-olive);
 }

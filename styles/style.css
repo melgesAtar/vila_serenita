@@ -53,7 +53,7 @@ body {
 
 /* CTAS */
 .cta {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     gap: .625rem;
@@ -70,6 +70,7 @@ body {
 .cta1 {
     color: var(--greendlewald);
     background-color: var(--tea-green);
+    align-self: center;
 }
 
 .cta1:hover {
@@ -108,7 +109,7 @@ body {
     margin-top: 4.375rem;
     color: var(--off-white-gray);
     background-color: var(--dark-teal);
-    justify-self: center;
+    align-self: center;
 }
 
 .cta3:hover {
@@ -212,3 +213,6 @@ body {
         transform: scale(1);
     }
 }
+
+
+

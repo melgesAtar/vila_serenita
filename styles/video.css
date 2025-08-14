@@ -6,7 +6,7 @@
     background-image:
         radial-gradient(circle, var(--forest-green), var(--greendlewald));
     min-height: 42.5rem;
-    
+    text-align: center;
 }
 .video-container {
     max-width: 754px;
