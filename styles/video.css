@@ -6,6 +6,7 @@
     background-image:
         radial-gradient(circle, var(--forest-green), var(--greendlewald));
     min-height: 42.5rem;
+    
 }
 .video-container {
     max-width: 754px;
@@ -23,15 +24,14 @@
 
 @media (max-width: 1570px) {
     .video {
-        padding: 3.75rem 4rem;
-
+        padding: 3.75rem 4rem; 
     }
 }
 
 @media (max-width: 768px) {
     .video {
+        box-sizing: border-box;
         padding: 4rem 3.75rem;
-        min-height: auto;
     }
     .video-container {
         max-width: 100%;

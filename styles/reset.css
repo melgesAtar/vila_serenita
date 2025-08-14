@@ -40,3 +40,39 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+html { -webkit-text-size-adjust: 100%; }
+html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { -webkit-tap-highlight-color: transparent; }
+img { height: auto; -webkit-user-drag: none; } /* evita arrastar imagens acidentalmente */
+svg { height: auto; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button {
+  line-height: 1;        
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 0;        
+  touch-action: manipulation; 
+}
+
+
+:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+
+
+.flex-gap { display: flex; gap: 1rem; }
+
+@supports not (gap: 1rem) {
+  .flex-gap { margin: -0.5rem; }
+  .flex-gap > * { margin: 0.5rem; }
+}
