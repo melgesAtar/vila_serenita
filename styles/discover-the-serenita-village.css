@@ -1,16 +1,16 @@
-.discover-the-serenita-village{
+.discover-the-serenita-village {
     display: flex;
     flex-direction: column;
     padding: 3.75rem 11.4375rem;
 }
 
-.discover-the-serenita-village-content{
+.discover-the-serenita-village-content {
     display: flex;
     flex-direction: row;
     gap: 3.125rem;
 }
 
-.discover-the-serenita-village-content-left{
+.discover-the-serenita-village-content-left {
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -20,7 +20,7 @@
     padding-bottom: 1.25rem;
 }
 
-.discover-the-serenita-village-content-left-title{
+.discover-the-serenita-village-content-left-title {
     font-size: 4rem;
     color: var(--deep-forest-green);
     text-align: left;
@@ -30,21 +30,23 @@
 .discover-the-serenita-village-content-left-title::after {
     content: '';
     display: block;
-    width: 100%; 
+    width: 100%;
     height: .3125rem;
     background-image: url(/assets/hero/green-line.svg);
-    background-size: contain; 
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
     bottom: 37%;
     left: 0;
 }
-.discover-the-serenita-village-content-left-buttons{
+
+.discover-the-serenita-village-content-left-buttons {
     margin-top: 2.5rem;
     display: flex;
     gap: 1.25rem;
 }
+
 .btn-prev,
 .btn-next {
     width: 4.25rem;
@@ -57,6 +59,7 @@
     cursor: pointer;
     transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
 }
+
 .btn-prev:hover,
 .btn-next:hover {
     background-color: var(--greendlewald);
@@ -74,32 +77,35 @@
     fill: var(--chrysler-arctic-white);
 }
 
-.discover-the-serenita-village-content-right{
+.discover-the-serenita-village-content-right {
     max-width: 100%;
     overflow: hidden;
 }
 
-.swiper, .swiper-wrapper {
+.swiper,
+.swiper-wrapper {
     width: 100%;
 }
 
 
-.swiper-slide{
+.swiper-slide {
     border-radius: 20px;
 }
 
-.swiper-slide img{
+.swiper-slide img {
     width: 100%;
     height: 100%;
     border-radius: 20px;
 }
-.categories{
+
+.categories {
     margin-top: 1.25rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1.25rem;
 }
-.categories button{
+
+.categories button {
     flex: 1;
     padding: .625rem 1.25rem;
     background: transparent;
@@ -110,44 +116,54 @@
     font-size: 1.125rem;
     cursor: pointer;
 }
+
 .categories button.ativo,
-.categories button:hover{
+.categories button:hover {
     transition: all 0.5s ease-in-out;
     background-color: var(--bright-olive);
 }
 
-.cta-discover-the-serenita-village{
+.cta-discover-the-serenita-village {
     margin-top: 3.75rem;
     justify-self: center;
 }
 
 @media (max-width: 1570px) {
-    .discover-the-serenita-village{
+    .discover-the-serenita-village {
         padding: 3.75rem 4rem;
     }
 }
 
 @media (max-width: 1250px) {
-    .discover-the-serenita-village-content{
+    .discover-the-serenita-village-content {
         flex-direction: column;
         align-items: center;
     }
-    .discover-the-serenita-village-content-left{
+
+    .discover-the-serenita-village-content-left {
         min-width: auto;
         text-align: center;
     }
-    .discover-the-serenita-village-content-left-title{
+
+    .discover-the-serenita-village-content-left-title {
         text-align: center;
         font-size: 3rem;
     }
-    .discover-the-serenita-village-content-left-title::after{
+
+    .discover-the-serenita-village-content-left-title::after {
         bottom: 15%;
         width: 40%;
         left: 30%;
     }
-    .discover-the-serenita-village-content-left-buttons{
+
+    .discover-the-serenita-village-content-left-buttons {
         display: none;
     }
 
-    
+}
+
+@media (max-width: 870px) {
+    .discover-the-serenita-village-content-left-title::after {
+        content: none;
+    }
 }

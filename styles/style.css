@@ -4,6 +4,9 @@
 @import url(testimonials.css);
 @import url(about.css);
 @import url(discover-the-serenita-village.css);
+@import url(faq.css);
+@import url(form.css);
+@import url(footer.css);
 
 html {
     scroll-behavior: smooth;
@@ -30,16 +33,22 @@ html {
 /*Colors*/
 :root {
     --white: #FFFFFF;
+    --white-smoke: #E0E3E2;
     --chrysler-arctic-white: #F6F7F4;
     --off-white-gray: #F1F2EE;
+    --sage-gray:#898E7F;
+    --white-gray: #DADED4;
+    --medium-gray:#5D5D5D;
     --tea-green: #D4EBC0;
     --light-olive: #DAE29B;
     --bright-olive:#CFD88D;
+    --pale-aqua: #C4D9D4;
     --sage-green: #87A4A3;
     --forest-green: #436F5C;
     --dark-teal: #386665;
     --lagoon-shadow: #444741;
     --greendlewald: #0D452E;
+    --dark-green:#131712;
     --underworld: #1D221B;
     --deep-forest-green: #040F00;
     --black: #000000;
@@ -216,3 +225,36 @@ body {
 
 
 
+
+::selection {
+    background-color: var(--bright-olive);
+    color: #ffffff; 
+}
+
+
+::-moz-selection {
+    background-color: var(--bright-olive);
+    color: #ffffff;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-teal); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--off-white-gray); 
+    border-radius: 10px; 
+
+}
+
+/* Thumb ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #06412A;
+}

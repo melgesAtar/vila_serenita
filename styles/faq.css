@@ -1,0 +1,119 @@
+.faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.75rem 11.4375rem;
+}
+
+.faq-title {
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--deep-forest-green);
+    margin-bottom: 3.75rem;
+    text-align: center;
+    max-width: 55.375rem;
+    position: relative;
+}
+
+.faq-title::after {
+    content: '';
+    display: block;
+    width: 34.375rem;
+    height: .3125rem;
+    background-image: url(/assets/hero/green-line.svg);
+    position: absolute;
+    left: 4%;
+    top: 44%;
+}
+
+.faq-container {
+    padding-bottom: 2.5rem;
+    max-width: 97.125rem;
+    width: 100%;
+    margin: auto;
+}
+
+.faq-item {
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    height: 6rem;
+    cursor: pointer;
+    padding: 1.875rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--dark-green) !important;
+    background: var(--off-white-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    transition: all 0.5s ease;
+}
+
+.faq-question:hover {
+    background: var(--bright-olive);
+}
+
+.faq-question:hover .arrow {
+    fill: var(--dark-green);
+    transition: all 0.5s ease;
+}
+
+.arrow {
+    display: inline-block;
+    width: 2.75rem;
+    height: 2.125rem;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(270deg);
+}
+
+.faq-answer {
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.faq-item.active .faq-answer {
+    font-weight: 400;
+    color: var(--lagoon-shadow);
+    font-size: 1.5rem;
+    padding: 1.25rem;
+    max-height: 200px;
+}
+
+@media (max-width: 1570px) {
+    .faq {
+        padding: 3.75rem 4rem;
+    }
+}
+
+@media (max-width: 770px) {
+    .faq-title::after {
+        content: none; 
+    }
+
+    .faq-question {
+        font-size: 1.25rem;
+        height: auto;
+        padding: 1.25rem;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 1rem;
+        font-size: 1.25rem;
+    }
+}
