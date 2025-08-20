@@ -157,7 +157,11 @@
     }
 
     .discover-the-serenita-village-content-left-buttons {
-        display: none;
+        align-self: center;
+    }
+    .discover-the-serenita-village-content-left-buttons svg {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
 }
