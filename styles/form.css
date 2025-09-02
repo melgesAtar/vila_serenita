@@ -60,6 +60,7 @@
     border-radius: 12px;
     margin-bottom: 1.25rem;
     box-sizing: border-box;
+    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
 }
 .form-input::placeholder {
     color: var(--sage-gray);
@@ -71,8 +72,42 @@
     border-color: var(--dark-teal);
 }
 
+/* Estados de validacao */
+.form-input.is-valid {
+    border-color: var(--greendlewald);
+    background-color: #f2f9f4;
+    box-shadow: 0 0 0 2px rgba(13, 69, 46, 0.15);
+}
+
+.form-input.is-invalid {
+    border-color: #d93025;
+    background-color: #fff7f6;
+    box-shadow: 0 0 0 2px rgba(217, 48, 37, 0.12);
+}
+
 .form-submit-button{
     margin-top: 3.125rem !important;
+}
+
+/* Estado desabilitado e pronto para envio */
+.form-submit-button:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+    filter: grayscale(5%);
+}
+
+.form-submit-button.is-ready {
+    background-color: var(--tea-green);
+    color: var(--greendlewald);
+}
+
+.form-submit-button.is-ready svg {
+    fill: var(--greendlewald);
+}
+
+.form-submit-button.is-ready:hover {
+    background-color: #c6e6aa;
+    color: var(--greendlewald);
 }
 
 
