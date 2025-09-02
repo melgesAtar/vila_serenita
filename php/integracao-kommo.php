@@ -36,18 +36,35 @@ function sendLeadRequest($data, $headers) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = isset($_POST['nome']) ? trim($_POST['nome']) : '';
-    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-    $phone = isset($_POST['telefone']) ? trim($_POST['telefone']) : '';
-    $state = isset($_POST['estado']) ? trim($_POST['estado']) : '';
-    $city = isset($_POST['cidade']) ? trim($_POST['cidade']) : '';
+    // Aceitar tanto x-www-form-urlencoded (POST) quanto JSON
+    $rawInput = file_get_contents('php://input');
+    $jsonBody = json_decode($rawInput, true);
+
+    $name = '';
+    $email = '';
+    $phone = '';
+    $state = '';
+    $city = '';
+
+    // Prioriza POST; fallback para JSON e para chaves em inglês
+    $name = trim($_POST['nome'] ?? ($jsonBody['nome'] ?? ($jsonBody['name'] ?? '')));
+    $email = trim($_POST['email'] ?? ($jsonBody['email'] ?? ''));
+    $phone = trim($_POST['telefone'] ?? ($jsonBody['phone'] ?? ''));
+    $state = trim($_POST['estado'] ?? ($jsonBody['estado'] ?? ''));
+    $city = trim($_POST['cidade'] ?? ($jsonBody['cidade'] ?? ''));
   
 
     // UTM Parameters
-    $utm_source = isset($_POST['utm_source']) ? htmlspecialchars($_POST['utm_source']) : 'Desconhecido';
-    $utm_medium = isset($_POST['utm_medium']) ? htmlspecialchars($_POST['utm_medium']) : 'Desconhecido';
-    $utm_campaign = isset($_POST['utm_campaign']) ? htmlspecialchars($_POST['utm_campaign']) : 'Desconhecido';
-    $utm_content = isset($_POST['utm_content']) ? htmlspecialchars($_POST['utm_content']) : 'Desconhecido';
+    $utm_source = htmlspecialchars($_POST['utm_source'] ?? ($jsonBody['utm_source'] ?? 'Desconhecido'));
+    $utm_medium = htmlspecialchars($_POST['utm_medium'] ?? ($jsonBody['utm_medium'] ?? 'Desconhecido'));
+    $utm_campaign = htmlspecialchars($_POST['utm_campaign'] ?? ($jsonBody['utm_campaign'] ?? 'Desconhecido'));
+    $utm_content = htmlspecialchars($_POST['utm_content'] ?? ($jsonBody['utm_content'] ?? 'Desconhecido'));
+    $utm_term = htmlspecialchars($_POST['utm_term'] ?? ($jsonBody['utm_term'] ?? ''));
+    $utm_referrer = htmlspecialchars($_POST['utm_referrer'] ?? ($jsonBody['utm_referrer'] ?? ''));
+    $referrer = htmlspecialchars($_POST['referrer'] ?? ($jsonBody['referrer'] ?? ''));
+    $gclientid = htmlspecialchars($_POST['gclientid'] ?? ($jsonBody['gclientid'] ?? ''));
+    $gclid = htmlspecialchars($_POST['gclid'] ?? ($jsonBody['gclid'] ?? ''));
+    $fbclid = htmlspecialchars($_POST['fbclid'] ?? ($jsonBody['fbclid'] ?? ''));
 
     if (empty($name) || empty($phone)) {
         sendJsonResponse('error', 'Todos os campos são obrigatórios.');
@@ -82,6 +99,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $data = [
         [
+            "custom_fields_values" => [
+                ["field_id" => 948255, "values" => [["value" => $utm_content]]],
+                ["field_id" => 948257, "values" => [["value" => $utm_medium]]],
+                ["field_id" => 948259, "values" => [["value" => $utm_campaign]]],
+                ["field_id" => 948261, "values" => [["value" => $utm_source]]],
+                ["field_id" => 948263, "values" => [["value" => $utm_term]]],
+                ["field_id" => 948265, "values" => [["value" => $utm_referrer]]],
+                ["field_id" => 948267, "values" => [["value" => $referrer]]],
+                ["field_id" => 948269, "values" => [["value" => $gclientid]]],
+                ["field_id" => 948271, "values" => [["value" => $gclid]]],
+                ["field_id" => 948273, "values" => [["value" => $fbclid]]]
+            ],
             "_embedded" => [
                 "contacts" => [
                     [
